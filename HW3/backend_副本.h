@@ -3,6 +3,7 @@ void search(char [3]);
 void delete(char [3]);
 void print_list();
 void init();
+void end();
 
 
 
