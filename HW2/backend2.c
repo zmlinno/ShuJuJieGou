@@ -6,6 +6,7 @@
 #define NUMBER_OF_RECORDS 20
 
 // record structure
+//çš„
 struct record {
   char name[3];
   char number[4];
@@ -53,14 +54,14 @@ int search_index(char name[3])
     for (int i = 0; i < k; i++)
     {
         if (strncmp(data[i].name, name, 3) == 0)
-            //strncmpÊÇÒ»¸ö±È½Ïº¯Êı
-            //ÔÚÕâ¸ö´úÂëÀïÃæÀ´±È½Ïdata[i].nameºÍnameÁ½¸ö×Ö·û´®µÄÇ°Èı¸ö×Ö·ûÊÇ·ñÏàÍ¬
-            //Èç¹ûÏàÍ¬£¬strncmpº¯Êı·µ»Ø0£¬Ìõ¼ş³ÉÁ¢£¬Ö´ĞĞreturn
+            //strncmpæ˜¯ä¸€ä¸ªæ¯”è¾ƒå‡½æ•°
+            //åœ¨è¿™ä¸ªä»£ç é‡Œé¢æ¥æ¯”è¾ƒdata[i].nameå’Œnameä¸¤ä¸ªå­—ç¬¦ä¸²çš„å‰ä¸‰ä¸ªå­—ç¬¦æ˜¯å¦ç›¸åŒ
+            //å¦‚æœç›¸åŒï¼Œstrncmpå‡½æ•°è¿”å›0ï¼Œæ¡ä»¶æˆç«‹ï¼Œæ‰§è¡Œreturn
             return i;
     }
   printf("Search was not implemented yet.\n");
   return -1;
-  //Õâ¸öÊÇ×÷ÒµÒÑ¾­Íê³É¡£
+  //è¿™ä¸ªæ˜¯ä½œä¸šå·²ç»å®Œæˆã€‚
 }
 
 
@@ -89,9 +90,9 @@ void delete(char name[3])
         {
             strcpy(data[i].name,data[i + 1].name);
             strcpy(data[i].number, data[i + 1].number);
-            //strcpyÊÇ¸²¸ÇµÄÒâË¼
-            //¼òµ¥Ëµ¾ÍÊÇi+1µÄÔªËØ°Ñi+¸ø¸²¸ÇÁË
-            //È»ºók--£¬¾ÍÉ¾³ıÁË
+            //strcpyæ˜¯è¦†ç›–çš„æ„æ€
+            //ç®€å•è¯´å°±æ˜¯i+1çš„å…ƒç´ æŠŠi+ç»™è¦†ç›–äº†
+            //ç„¶åk--ï¼Œå°±åˆ é™¤äº†
         }
         k--;
     }
@@ -119,11 +120,11 @@ int cmp_record(const void *r1, const void *r2)
 {
   struct record * x = (struct record *) r1;
   struct record * y = (struct record *) r2;
-  //ÔÚÕâ¸ö±È½ÏµÄÒâË¼ÊÇ¸ù¾İASCLLÖµÀ´ÅÅĞò
-  // ³ÉÔ±µÄÇ°Èı¸ö×Ö·ûÔÚ×ÖµäË³ĞòÀ´±È½Ï
-  //Èç¹ûr1<r2£¬·µ»Ø¸ºÖµ
-  //Èç¹ûr1=r2£¬·µ»Ø0
-  //Èç¹ûr1>r2£¬·µ»Ø1
+  //åœ¨è¿™ä¸ªæ¯”è¾ƒçš„æ„æ€æ˜¯æ ¹æ®ASCLLå€¼æ¥æ’åº
+  // æˆå‘˜çš„å‰ä¸‰ä¸ªå­—ç¬¦åœ¨å­—å…¸é¡ºåºæ¥æ¯”è¾ƒ
+  //å¦‚æœr1<r2ï¼Œè¿”å›è´Ÿå€¼
+  //å¦‚æœr1=r2ï¼Œè¿”å›0
+  //å¦‚æœr1>r2ï¼Œè¿”å›1
   return strncmp(x->name, y->name, 3);
 }
 
